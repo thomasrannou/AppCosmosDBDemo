@@ -8,16 +8,25 @@ public class CosmosService : ICosmosService
 { 
     private readonly CosmosClient _client;
 
-    public CosmosService()
+    private IConfiguration _configuration;
+    
+    public CosmosService(IConfiguration configuration)
     {
+        _configuration = configuration;
+        // retrieve nested App Service app setting
+        var myHierarchicalConfig = _configuration["My:Hierarchical:Config:Data"];
+        
+        // retrieve App Service connection string
+        var myConnString = _configuration.GetConnectionString("db");
+        
         _client = new CosmosClient(
-            connectionString: "AccountEndpoint=https://msdocs-cosmos-nosql-tr.documents.azure.com:443/;AccountKey=ABkXTY07Qukk2uZVqhEXyH5fh5LhOsoCOG6xJdiwEGvFe0mw7J6m7B8XKtftwWm0glRyT1AooTBaACDbkyxrqw==;"
+            connectionString: myConnString
         ,
         new CosmosClientOptions()
         {
             ApplicationRegion = Regions.FranceCentral,
         });
-        }
+    }
 
     private Container container
     {
