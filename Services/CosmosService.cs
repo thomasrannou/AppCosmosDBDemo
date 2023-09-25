@@ -17,7 +17,7 @@ public class CosmosService : ICosmosService
         ,
         new CosmosClientOptions()
         {
-            ApplicationRegion = Regions.FranceCentral,
+            ApplicationRegion = Regions.NorthEurope,
         });
     }
 
