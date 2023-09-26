@@ -13,7 +13,7 @@ public class CosmosService : ICosmosService
     public CosmosService()
     {
         _client = new CosmosClient(
-            connectionString: "AccountEndpoint=https://arwcosmosdb.documents.azure.com:443/;AccountKey=I3q2zhjin1IG6JwcA9zphfoFI2A1VBm3eAvbe59LsffPwV7GvcsHtY5aJHuoDOXTge6zWSMJRdmXACDbjczu3Q==;"
+            connectionString: "AccountEndpoint=https://msdocs-cosmos-nosql-tr.documents.azure.com:443/;AccountKey=ABkXTY07Qukk2uZVqhEXyH5fh5LhOsoCOG6xJdiwEGvFe0mw7J6m7B8XKtftwWm0glRyT1AooTBaACDbkyxrqw==;"
         ,
         new CosmosClientOptions()
         {
